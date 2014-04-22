@@ -40,7 +40,7 @@ public class QihooActivity extends Activity {
     			null, null, null, null);
     	ListAdapter adapter = new SimpleCursorAdapter(this, 
     			android.R.layout.simple_list_item_2, cursor, 
-    			new String[]{PhoneLookup.DISPLAY_NAME, PhoneLookup.NUMBER}, 
+    			new String[]{PhoneLookup.DISPLAY_NAME, PhoneLookup.HAS_PHONE_NUMBER}, 
     			new int[]{android.R.id.text1, android.R.id.text2});
     	lview.setAdapter(adapter);
     }
