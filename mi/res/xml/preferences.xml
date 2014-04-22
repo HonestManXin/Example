@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="【软件汉化信息】">
+        <Preference android:title="MIUI汉化组" android:key="chinese" android:summary=" By_fafa889汉化" />
+        <Preference android:title="MIUI论坛" android:key="forum" android:summary="http://www.miui.com" />
+        <intent android:action="android.intent.action.VIEW" android:data="http://www.miui.com/space-uid-48069.html" />
+    </PreferenceCategory>
+</PreferenceScreen>
