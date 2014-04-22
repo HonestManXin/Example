@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, QihooActivity!</string>
+    <string name="app_name">Test</string>
+    <string name="click_me">点我</string>
+    <string name="name">姓名</string>
+	<string name="phone">号码</string>
+</resources>
