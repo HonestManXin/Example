@@ -18,6 +18,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity 
+            android:name=".QihooPicureActivity"
+            android:label="@string/app_picture">
+        </activity>
+        
+        <activity 
+            android:name=".QihooContactActivity"
+            android:label="@string/app_contact">
+        </activity>
+        
+        <activity 
+            android:name=".QihooShareActivity"
+            android:label="@string/app_share">
+        </activity>
+        
     </application>
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
 </manifest>

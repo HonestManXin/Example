@@ -1,10 +1,17 @@
 package com.qihoo.example;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.PhoneLookup;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -17,32 +24,40 @@ public class QihooActivity extends Activity {
 	private double slide_prev_x = 0;
 	private double slide_prev_y = 0;
 	
+	private static Map<Integer, Class<? extends Activity>> id_activity = new HashMap<Integer, Class<? extends Activity>>();
+	
+	static {
+		id_activity.put(R.id.category_picture, QihooPicureActivity.class);
+		id_activity.put(R.id.category_contact, QihooContactActivity.class);
+		id_activity.put(R.id.category_share, QihooShareActivity.class);
+	}
+	
+	private View.OnClickListener listener = new View.OnClickListener() {
+		
+		public void onClick(View v) {
+			int id = v.getId();
+			Class<?> destActivityClass = id_activity.get(id);
+			Intent intent = new Intent(QihooActivity.this, destActivityClass);
+			startActivity(intent);
+		}
+	};
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        Button click_me = (Button) findViewById(R.id.btn_click);
-        click_me.setOnClickListener(new Button.OnClickListener() {
-			
-			public void onClick(View v) {
-				QihooActivity.this.showToast("click me was click");
-			}
-		});
+        setupClickEvent();
         
-        ListView view = (ListView) findViewById(R.id.contact);
-        addContactData(view);
     }
     
-    private void addContactData(ListView lview) {
-    	Cursor cursor = this.getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, 
-    			null, null, null, null);
-    	ListAdapter adapter = new SimpleCursorAdapter(this, 
-    			android.R.layout.simple_list_item_2, cursor, 
-    			new String[]{PhoneLookup.DISPLAY_NAME, PhoneLookup.HAS_PHONE_NUMBER}, 
-    			new int[]{android.R.id.text1, android.R.id.text2});
-    	lview.setAdapter(adapter);
+    private void setupClickEvent() {
+    	Set<Integer> ids = id_activity.keySet();
+    	for (Integer i : ids) {
+    		View  view= findViewById(i);
+    		view.setOnClickListener(listener);
+    	}
     }
     
     @Override
