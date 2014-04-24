@@ -162,6 +162,7 @@ public final class R {
         public static final int category_zip=0x7f070016;
         public static final int category_zip_count=0x7f070017;
         public static final int health_score=0x7f070005;
+        public static final int pict_gallery=0x7f07001c;
         public static final int user_basic=0x7f070001;
         public static final int user_health=0x7f070004;
         public static final int user_health_detail=0x7f070006;
@@ -173,6 +174,7 @@ public final class R {
     }
     public static final class layout {
         public static final int main=0x7f030000;
+        public static final int picture=0x7f030001;
     }
     public static final class string {
         public static final int added_favorite=0x7f050000;
