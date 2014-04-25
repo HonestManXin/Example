@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import com.qihoo.example.picture.QihooPicureActivity;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

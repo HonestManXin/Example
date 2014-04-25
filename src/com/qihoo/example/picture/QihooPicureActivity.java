@@ -1,19 +1,25 @@
-package com.qihoo.example;
+package com.qihoo.example.picture;
+
+import com.qihoo.example.R;
+import com.qihoo.example.R.id;
+import com.qihoo.example.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.widget.Gallery;
+import android.widget.GridView;
 
 public class QihooPicureActivity extends Activity {
 	private String pictPath = "/sdcard/Pictures";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.picture);
 		
-		Gallery gallery = (Gallery) findViewById(R.id.pict_gallery);
-		gallery.setAdapter(new PictureAdapter(pictPath, this));
+		GridView gridView = (GridView) findViewById(R.id.pict_gallery);
+		gridView.setAdapter(new PictureAdapter(pictPath, this));
 	}
+	
 }
