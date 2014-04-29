@@ -1,5 +1,6 @@
 package com.qihoo.example;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -126,6 +127,12 @@ public class DBUtil {
 	}
 	
 	public static List<YunFile> getYunFileOfAllFile() {
+		SQLiteDatabase db = myHelper.getReadableDatabase();
+		List<YunFile> picts = new ArrayList<YunFile>();
+		Cursor cursor = db.query(DB_CREATE_FILE, new String[]{}, KEY_TYPE + "=" + "?", new String[]{"2"}, null, null, null);
+		for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+			//
+		}
 		return null;
 	}
 	

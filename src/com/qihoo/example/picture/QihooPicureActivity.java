@@ -88,6 +88,7 @@ public class QihooPicureActivity extends Activity {
 			if(picts.size() != 0) {
 				Message msg = handler.obtainMessage();
 				Bundle data = new Bundle();
+				
 				msg.setData(data);
 				handler.sendMessage(msg);
 			}
