@@ -129,15 +129,48 @@ public class DBUtil {
 	public static List<YunFile> getYunFileOfAllFile() {
 		SQLiteDatabase db = myHelper.getReadableDatabase();
 		List<YunFile> picts = new ArrayList<YunFile>();
-		Cursor cursor = db.query(DB_CREATE_FILE, new String[]{}, KEY_TYPE + "=" + "?", new String[]{"2"}, null, null, null);
+		Cursor cursor = db.query(DB_CREATE_FILE, new String[]{KEY_FULLNAME, KEY_NID, KEY_PID, KEY_FILEHASH}, 
+				KEY_TYPE + "=" + "?", new String[]{"2"}, null, null, KEY_MODIFYTIME);
+		int nameIndex = cursor.getColumnIndex(KEY_FULLNAME);
+		int nidIndex = cursor.getColumnIndex(KEY_NID);
+		int pidIndex = cursor.getColumnIndex(KEY_PID);
+		int hashIndex = cursor.getColumnIndex(KEY_FILEHASH);
+		
 		for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
 			//
+			YunFile f = new YunFile();
+			f.name = cursor.getColumnName(nameIndex);
+			f.nid = cursor.getColumnName(nidIndex);
+			f.pid = cursor.getColumnName(pidIndex);
+			f.file_hash = cursor.getColumnName(hashIndex);
+			picts.add(f);
+			
 		}
-		return null;
+		cursor.close();
+		db.close();
+		return picts;
 	}
 	
 	public static List<YunFile> getYunFilesInDirectory(String pid) {
-		return null;
+		SQLiteDatabase db = myHelper.getReadableDatabase();
+		List<YunFile> picts = new ArrayList<YunFile>();
+		Cursor cursor = db.query(DB_CREATE_FILE, new String[]{KEY_FULLNAME, KEY_NID, KEY_PID, KEY_FILEHASH}, 
+				KEY_PID + "=? and " + KEY_TYPE +"=?", new String[]{pid, "2"}, null, null, KEY_MODIFYTIME);
+		int nameIndex = cursor.getColumnIndex(KEY_FULLNAME);
+		int nidIndex = cursor.getColumnIndex(KEY_NID);
+		int pidIndex = cursor.getColumnIndex(KEY_PID);
+		int hashIndex = cursor.getColumnIndex(KEY_FILEHASH);
+		for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+			YunFile f = new YunFile();
+			f.name = cursor.getColumnName(nameIndex);
+			f.nid = cursor.getColumnName(nidIndex);
+			f.pid = cursor.getColumnName(pidIndex);
+			f.file_hash = cursor.getColumnName(hashIndex);
+			picts.add(f);
+		}
+		cursor.close();
+		db.close();
+		return picts;
 	}
 	
 	public static Cursor getCursorOfAllPictures() {

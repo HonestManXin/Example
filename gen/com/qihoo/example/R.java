@@ -163,7 +163,9 @@ public final class R {
         public static final int category_zip_count=0x7f070018;
         public static final int full_imageView=0x7f070000;
         public static final int health_score=0x7f070006;
-        public static final int pict_gallery=0x7f07001d;
+        public static final int pict_dirname=0x7f07001e;
+        public static final int pict_gallery=0x7f07001f;
+        public static final int pict_thumb=0x7f07001d;
         public static final int user_basic=0x7f070002;
         public static final int user_health=0x7f070005;
         public static final int user_health_detail=0x7f070007;
