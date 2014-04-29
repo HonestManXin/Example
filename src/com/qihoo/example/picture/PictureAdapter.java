@@ -20,7 +20,7 @@ import android.widget.ImageView;
 public class PictureAdapter extends BaseAdapter {
 	private String pictDir = null;
 	private List<File> pictures = new ArrayList<File>();
-	private static String[] supportedAble = new String[]{".jpg", ".jpeg", ".gif"};
+	private static String[] supportedAble = new String[]{".jpg", ".jpeg", ".gif", ".png"};
 	private Context context;
 	private int screenWidth = 0, screenHeight = 0;
 	

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
+	
+    <string name="authName">Diaos_Disk</string>
+    <string name="authKey">097c20c8481f0248e50cd056aa46b02c</string>
+    <string name="authSecret">ca62f95ef3c51f0929f9fcabf0bc13ee</string>
+    
     <string name="added_favorite">Added to Favorites</string>
     <string name="app_name">360网盘</string>
     <string name="cancel">Cancel</string>

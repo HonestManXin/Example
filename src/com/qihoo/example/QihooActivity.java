@@ -5,6 +5,13 @@ import java.util.Map;
 import java.util.Set;
 
 import com.qihoo.example.picture.QihooPicureActivity;
+import com.qihoo.yunpan.sdk.android.config.YunpanSDKConfig;
+import com.qihoo.yunpan.sdk.android.config.YunpanSDKConstants;
+import com.qihoo.yunpan.sdk.android.http.action.UserIntfLogin;
+import com.qihoo.yunpan.sdk.android.http.model.UserCenterInfo;
+import com.qihoo.yunpan.sdk.android.http.model.UserLoginInfo;
+import com.qihoo.yunpan.sdk.android.model.IYunpanInterface;
+import com.qihoo.yunpan.sdk.android.task.LoginYunpanAction;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,11 +29,14 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class QihooActivity extends Activity {
+public class QihooActivity extends Activity implements IYunpanInterface{
 	private double slide_prev_x = 0;
 	private double slide_prev_y = 0;
 	
 	private static Map<Integer, Class<? extends Activity>> id_activity = new HashMap<Integer, Class<? extends Activity>>();
+	private UserLoginInfo loginUser = null;
+	private String userName = "812467108@qq.com";
+	private String passwd = "zsx2815";
 	
 	static {
 		id_activity.put(R.id.category_picture, QihooPicureActivity.class);
@@ -50,9 +60,37 @@ public class QihooActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        setupClickEvent();
+        setYunDiskAuth();
+        login(userName, passwd);
         
+        setupClickEvent();
     }
+    
+    private void setYunDiskAuth() {
+    	YunpanSDKConstants.setYunpanInterface(this);
+		YunpanSDKConstants.AUTH_NAME = "Diaos_Disk";
+		YunpanSDKConstants.AUTH_KEY = "097c20c8481f0248e50cd056aa46b02c";
+		YunpanSDKConstants.AUTH_SECRET = "ca62f95ef3c51f0929f9fcabf0bc13ee";
+    }
+    
+    
+ // 用户登录
+ 	private void login(String userName, String passwd) {
+ 		UserCenterInfo cInfo = new UserIntfLogin().login(userName, passwd, "", "");
+ 		if (cInfo != null && cInfo.errno != null && cInfo.errno.equals(YunpanSDKConfig.RESULT_SUCCESS)
+ 				&& cInfo.user != null && cInfo.user.qid != null) {
+ 			UserLoginInfo login = new LoginYunpanAction().loginYunpan(cInfo.user.qid);
+ 			if (login != null && login.errno != null && login.errno.equals(YunpanSDKConfig.RESULT_SUCCESS)) {
+ 				System.out.println("用户登录成功");
+ 				loginUser = login;
+ 				
+ 			} else {
+ 				System.out.println("用户登录失败");
+ 			}
+ 		} else {
+ 			System.out.println(cInfo.errmsg + "  " + cInfo.errno);
+ 		}
+ 	}
     
     private void setupClickEvent() {
     	Set<Integer> ids = id_activity.keySet();
@@ -90,4 +128,14 @@ public class QihooActivity extends Activity {
     private void showToast(String text) {
     	Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
+
+	public void onNewUserToken(String qid, String newtoken) {
+		// 用户token更新了
+		
+	}
+
+	public void onUserCookieInvalid(String qid) {
+		// 用户cookie失效，必须重新登录
+		
+	}
 }

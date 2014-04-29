@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"/>
      -->
      
+     <!--
      <GridView android:id="@+id/pict_gallery"
          android:layout_width="fill_parent"
          android:layout_height="fill_parent"
@@ -18,5 +19,12 @@
          android:stretchMode="columnWidth"
          >
      </GridView>
+     -->
+     
+     <ListView android:id="@+id/pict_gallery"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent">
+         
+     </ListView>
     
 </LinearLayout>
