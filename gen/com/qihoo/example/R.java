@@ -18,9 +18,10 @@ public final class R {
         public static final int orange=0x7f040002;
         public static final int orange_yellow=0x7f040008;
         public static final int red=0x7f040006;
-        public static final int remote_connect_text=0x7f040009;
-        public static final int remote_disconnect_text=0x7f04000a;
+        public static final int remote_connect_text=0x7f04000a;
+        public static final int remote_disconnect_text=0x7f04000b;
         public static final int shadowcolor=0x7f040004;
+        public static final int white=0x7f040009;
         public static final int yellow=0x7f040000;
     }
     public static final class drawable {

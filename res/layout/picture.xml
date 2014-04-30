@@ -2,12 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/white" >
      
-     <ListView android:id="@+id/pict_gallery"
+     <GridView android:id="@+id/pict_gallery"
          android:layout_width="fill_parent"
-         android:layout_height="fill_parent">
+         android:layout_height="fill_parent"
+         android:columnWidth="90dp" 
+         android:numColumns="auto_fit"
+         android:horizontalSpacing="10dp"
+         android:verticalSpacing="15dp"
+         android:stretchMode="columnWidth"
+         android:gravity="center"> 
          
-     </ListView>
+     </GridView>
     
 </LinearLayout>

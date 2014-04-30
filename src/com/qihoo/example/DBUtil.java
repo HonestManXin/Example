@@ -126,7 +126,28 @@ public class DBUtil {
 		return null;
 	}
 	
+	/**
+	 * 获取所有的文件
+	 * @return
+	 */
 	public static List<YunFile> getYunFileOfAllFile() {
+		return null;
+	}
+	
+	/**
+	 * 获取某个目录中所有文件
+	 * @param pid
+	 * @return
+	 */
+	public static List<YunFile> getYunFilesInDirectory(String pid) {
+		return null;
+	}
+	
+	/**
+	 * 获取所有的图片
+	 * @return
+	 */
+	public static List<YunFile> getAllPicturesOfAllFile() {
 		SQLiteDatabase db = myHelper.getReadableDatabase();
 		List<YunFile> picts = new ArrayList<YunFile>();
 		Cursor cursor = db.query(DB_CREATE_FILE, new String[]{KEY_FULLNAME, KEY_NID, KEY_PID, KEY_FILEHASH}, 
@@ -151,7 +172,12 @@ public class DBUtil {
 		return picts;
 	}
 	
-	public static List<YunFile> getYunFilesInDirectory(String pid) {
+	/**
+	 * 获取某个目录中的所有图片
+	 * @param pid
+	 * @return
+	 */
+	public static List<YunFile> getPicturesInDirectory(String pid) {
 		SQLiteDatabase db = myHelper.getReadableDatabase();
 		List<YunFile> picts = new ArrayList<YunFile>();
 		Cursor cursor = db.query(DB_CREATE_FILE, new String[]{KEY_FULLNAME, KEY_NID, KEY_PID, KEY_FILEHASH}, 
@@ -217,7 +243,7 @@ public class DBUtil {
 	
 	private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
-	public static long insertYunFile(YunFile file) {
+	public static long insertYunFile(YunFile file, boolean isPicture) {
 		SQLiteDatabase db=myHelper.getWritableDatabase();
 		
 		if(isFileExist(db, file)) {
@@ -235,15 +261,9 @@ public class DBUtil {
 		String filehash = file.file_hash;
 		int version = file.version;
 		String nv = file.modify_time + "";
-		int type = 1;
-		//type == 2 是图片
-		if (file.type == 0) {
-			if (FileUtil.isPicture(file)) {
-				type = 2;
-			} else {
-				type = 0;
-			}
-		}
+		int type = file.type;
+		if (isPicture) type = 2;
+		
 		int filecategory = file.file_category;
 		String update_key = "097c20c8481f0248e50cd056aa46b02c";
 		

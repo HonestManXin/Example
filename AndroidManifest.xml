@@ -24,7 +24,7 @@
         </activity>
         
         <activity 
-            android:name=".picture.QihooPicureActivity"
+            android:name=".picture.MainPicureActivity"
             android:label="@string/app_picture" />
 <!--          </activity> -->
         
@@ -40,6 +40,10 @@
         
         <activity 
             android:name=".picture.FullScreenPictureActivity"
+            android:label="@string/app_picture" />
+        
+        <activity 
+            android:name=".picture.DirectoryPictureActivity"
             android:label="@string/app_picture" />
         
     </application>
