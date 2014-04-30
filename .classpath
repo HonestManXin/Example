@@ -1,1 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><classpath>	<classpathentry kind="src" path="src"/>	<classpathentry kind="src" path="gen"/>	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>	<classpathentry kind="lib" path="libs/yunpan_android_sdk-v1.0_20140430.jar"/>	<classpathentry kind="output" path="bin/classes"/></classpath>
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="libs/yunpan_android_sdk-v1.0_20140430.jar"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
