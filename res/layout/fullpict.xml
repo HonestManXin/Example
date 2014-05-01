@@ -2,15 +2,83 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/black">
+        
+        <LinearLayout android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:gravity="center"
+		       >
+            <android.support.v4.view.ViewPager android:id="@+id/full_imageView"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+	        	android:scaleType="centerInside"
+        	 />
+        </LinearLayout>
+        
     
-    
-    <ImageView android:id="@+id/full_imageView"
+    <LinearLayout 
+        android:id="@+id/photo_info"
+        android:gravity="top"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="center"
-        android:layout_gravity="center"
-        />
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#e0000000">
+        <RelativeLayout android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+            <Button android:id="@+id/photo_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="返回"
+            style="@style/BackgroundTransparent"/>
+	        <TextView android:id="@+id/photo_name"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerInParent="true"
+	            style="@style/BackgroundTransparent"
+	            />
+	        <TextView android:id="@+id/photo_index" 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            style="@style/BackgroundTransparent"  
+	            />
+        </RelativeLayout>
+     </LinearLayout>
+    
+    <LinearLayout android:id="@+id/photo_operation"
+        android:gravity="bottom"
+        android:layout_gravity="bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#e0000000"
+        >
+        <RelativeLayout android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+			<Button android:text="分享"
+			   android:id="@+id/photo_share"
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content"
+			   android:layout_alignParentLeft="true"
+			   style="@style/BackgroundTransparent"/>
+			<Button android:text="删除"
+			   android:id="@+id/photo_delete"
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content"
+			   android:layout_centerInParent="true"
+			   style="@style/BackgroundTransparent"/>
+			<Button android:text="下载"
+			   android:id="@+id/photo_download"
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content" 
+			   android:layout_alignParentRight="true"
+			   style="@style/BackgroundTransparent"/>
+ 		</RelativeLayout>
+      "
+    </LinearLayout>
     
     
 </FrameLayout>

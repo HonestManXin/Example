@@ -12,6 +12,7 @@
     <color name="background">#272727</color>
     <color name="orange_yellow">#9b9ba0</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 
     <drawable name="semi_black">#80000000</drawable>
 

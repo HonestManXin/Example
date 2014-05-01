@@ -188,4 +188,9 @@
         <item name="android:textSize">17sp</item>
         <item name="android:background">@drawable/bottom_button_bar</item>
     </style>
+    
+    <style name="BackgroundTransparent">
+        <item name="android:background">#e0000000</item>
+        <item name="android:textColor">@color/yellow</item>
+    </style>
 </resources>

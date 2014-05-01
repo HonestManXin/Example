@@ -40,7 +40,7 @@
         
         <activity 
             android:name=".picture.FullScreenPictureActivity"
-            android:label="@string/app_picture" />
+            android:theme="@android:style/Theme.NoTitleBar" />
         
         <activity 
             android:name=".picture.DirectoryPictureActivity"
