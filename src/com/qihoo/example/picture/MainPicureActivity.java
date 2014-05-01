@@ -41,7 +41,7 @@ public class MainPicureActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.picture);
+		setContentView(R.layout.photo_main);
 		
 		gridView = (GridView) findViewById(R.id.pict_gallery);
 		adapter = new ThumbPictureAdapter(this, new MainPictureViewAdd());

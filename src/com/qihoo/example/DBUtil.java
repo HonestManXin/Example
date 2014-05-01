@@ -251,7 +251,7 @@ public class DBUtil {
 		}
 		
 		String fullName = file.name;
-		String name = FileUtil.getFileShortName(fullName);
+		String name = FileUtil.getFileSimpleName(fullName);
 		String nid = file.nid;
 		String pid = file.pid;
 		long createtime = file.create_time;
