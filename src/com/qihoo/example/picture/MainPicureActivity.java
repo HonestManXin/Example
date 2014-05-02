@@ -30,10 +30,13 @@ import com.qihoo.yunpan.sdk.android.http.action.FileGetNodeList;
 import com.qihoo.yunpan.sdk.android.http.action.FileGetNodeList.OrderType;
 import com.qihoo.yunpan.sdk.android.http.model.FileNodeList;
 import com.qihoo.yunpan.sdk.android.http.model.YunFile;
+import com.stay.pull.lib.PullToRefreshBase.OnRefreshListener;
+import com.stay.pull.lib.PullToRefreshGridView;
 
 public class MainPicureActivity extends Activity {
 	
-	private GridView gridView = null;
+	private PullToRefreshGridView refreshGridView = null;
+	private GridView gridView =null;
 	private LoadDiskPictureThread thread = null;
 	private Handler handler = null;
 	private ThumbPictureAdapter adapter = null;
@@ -43,10 +46,19 @@ public class MainPicureActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.photo_main);
 		
-		gridView = (GridView) findViewById(R.id.pict_gallery);
+		refreshGridView = (PullToRefreshGridView) findViewById(R.id.pict_gallery);
+		gridView = refreshGridView.getRefreshableView();
 		adapter = new ThumbPictureAdapter(this, new MainPictureViewAdd());
 		//loadAllPictures();
 		gridView.setAdapter(adapter);
+		refreshGridView.setOnRefreshListener(new OnRefreshListener() {
+
+			public void onRefresh() {
+				System.out.println("hehehe");
+				
+			}
+			
+		});
 		
 		handler = new ThumbHandler(adapter);
 		

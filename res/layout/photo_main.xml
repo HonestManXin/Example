@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/white" >
      
-     <GridView android:id="@+id/pict_gallery"
+     <com.stay.pull.lib.PullToRefreshGridView android:id="@+id/pict_gallery"
          android:layout_width="fill_parent"
          android:layout_height="fill_parent"
          android:columnWidth="95dp" 
@@ -13,8 +13,7 @@
          android:horizontalSpacing="5dp"
          android:verticalSpacing="5dp"
          android:stretchMode="columnWidth"
-         android:gravity="center"> 
+         android:gravity="center" /> 
          
-     </GridView>
     
 </LinearLayout>
