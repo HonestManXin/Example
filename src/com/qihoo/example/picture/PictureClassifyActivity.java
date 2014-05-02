@@ -1,0 +1,1 @@
+package com.qihoo.example.picture;import android.app.Activity;/** * 分类展示系统的图片 * 包括云端的，保险箱的，以及本地的图片 * @author zhangshixin * */public class PictureClassifyActivity extends Activity{}

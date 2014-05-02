@@ -12,11 +12,12 @@
         android:layout_centerInParent="true"
         android:text="@string/pull_to_refresh_pull_label"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/black" />
 
     <ProgressBar
         android:id="@+id/pull_to_refresh_progress"
-        style="?android:attr/progressBarStyleSmall"
+        style="?android:attr/progressBarStyleInverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"

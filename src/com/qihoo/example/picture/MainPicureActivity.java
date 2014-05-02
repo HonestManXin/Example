@@ -33,6 +33,11 @@ import com.qihoo.yunpan.sdk.android.http.model.YunFile;
 import com.stay.pull.lib.PullToRefreshBase.OnRefreshListener;
 import com.stay.pull.lib.PullToRefreshGridView;
 
+/**
+ * 不需要传入任何的数据
+ * @author zhangshixin
+ *
+ */
 public class MainPicureActivity extends Activity {
 	
 	private PullToRefreshGridView refreshGridView = null;
@@ -45,30 +50,24 @@ public class MainPicureActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.photo_main);
-		
 		refreshGridView = (PullToRefreshGridView) findViewById(R.id.pict_gallery);
 		gridView = refreshGridView.getRefreshableView();
 		adapter = new ThumbPictureAdapter(this, new MainPictureViewAdd());
 		//loadAllPictures();
 		gridView.setAdapter(adapter);
 		refreshGridView.setOnRefreshListener(new OnRefreshListener() {
-
 			public void onRefresh() {
 				System.out.println("hehehe");
-				
 			}
 			
 		});
-		
 		handler = new ThumbHandler(adapter);
-		
 		thread = new LoadDiskPictureThread(handler);
 		thread.start();
 	}
 	
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
 		if (thread != null) {
 			thread.setStop();
 		}
@@ -89,7 +88,6 @@ class LoadDiskPictureThread extends Thread{
 	
 	@Override
 	public void run() {
-		//loadAllPictures();
 		loadAlbum();
 	}
 	
@@ -113,8 +111,6 @@ class LoadDiskPictureThread extends Thread{
 			msg.setData(data);
 			handler.sendMessage(msg);
 		}
-		
-		
 	}
 	
 	public void setStop() {
