@@ -226,6 +226,7 @@ containing a value of this type.
         public static final int encrypt=0x7f050025;
         public static final int gridview=0x7f050003;
         public static final int health_score=0x7f05000a;
+        public static final int password_sure=0x7f050040;
         public static final int photo_classfy_bottom=0x7f050031;
         public static final int photo_classfy_cloud=0x7f05002b;
         public static final int photo_classfy_cloud_text=0x7f05002c;
@@ -245,6 +246,7 @@ containing a value of this type.
         public static final int photo_main_name=0x7f05003c;
         public static final int photo_name=0x7f050039;
         public static final int photo_operation=0x7f050021;
+        public static final int photo_password=0x7f05003f;
         public static final int photo_return=0x7f050028;
         public static final int photo_search=0x7f050029;
         public static final int photo_share=0x7f050024;
@@ -257,9 +259,9 @@ containing a value of this type.
         public static final int pict_thumb=0x7f050036;
         public static final int pullDownFromTop=0x7f050000;
         public static final int pullUpFromBottom=0x7f050001;
-        public static final int pull_to_refresh_image=0x7f050041;
-        public static final int pull_to_refresh_progress=0x7f050040;
-        public static final int pull_to_refresh_text=0x7f05003f;
+        public static final int pull_to_refresh_image=0x7f050043;
+        public static final int pull_to_refresh_progress=0x7f050042;
+        public static final int pull_to_refresh_text=0x7f050041;
         public static final int user_basic=0x7f050006;
         public static final int user_health=0x7f050009;
         public static final int user_health_detail=0x7f05000b;
@@ -279,7 +281,8 @@ containing a value of this type.
         public static final int photo_full_list_item=0x7f030005;
         public static final int photo_main=0x7f030006;
         public static final int photo_main_list_item=0x7f030007;
-        public static final int photo_pull_to_refresh_header=0x7f030008;
+        public static final int photo_password=0x7f030008;
+        public static final int photo_pull_to_refresh_header=0x7f030009;
     }
     public static final class string {
         public static final int added_favorite=0x7f070006;

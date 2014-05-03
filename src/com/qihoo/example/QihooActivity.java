@@ -63,6 +63,7 @@ public class QihooActivity extends Activity implements IYunpanInterface{
         setYunDiskAuth();
         FileUtil.init();
         AlbumUtil.init(this);
+        StrongBoxUtil.init(this, 1);
         login(userName, passwd);
         setupClickEvent();
     }

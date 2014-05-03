@@ -22,6 +22,7 @@
            android:layout_centerInParent="true"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
+           android:textColor="@color/white"
            android:gravity="center"
            android:textSize="20dp"/>
        <LinearLayout android:layout_width="wrap_content"
@@ -59,7 +60,6 @@
 	           android:layout_weight="2.1"
 	           android:padding="10dp"
 	           >
-
 	           <ImageView
 	               android:id="@+id/photo_classfy_cloud"
 	               android:layout_width="fill_parent"
@@ -78,6 +78,7 @@
                   android:layout_height="wrap_content"
                   android:layout_gravity="center"
                   android:gravity="center"
+                  android:textColor="@color/white"
 	               />
        		</RelativeLayout>
        
@@ -99,6 +100,7 @@
 		                  android:layout_gravity="center"
 		                  android:scaleType="centerInside"/>
 		              <TextView android:text="本地相册"
+		                  android:textColor="@color/white"
 		                  android:id="@+id/photo_classfy_local_text"
 		                  android:layout_alignParentBottom="true"
 		                  android:layout_width="wrap_content"
@@ -122,6 +124,7 @@
 	                  android:layout_width="wrap_content"
 	                  android:layout_height="wrap_content"
 	                  android:layout_gravity="center"
+	                  android:textColor="@color/white"
 	                  android:layout_alignParentBottom="true"
 	                  android:gravity="center"/>
          		 </RelativeLayout>
@@ -131,20 +134,36 @@
    
    <LinearLayout android:id="@+id/photo_classfy_select_backup"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_above="@+id/photo_classfy_bottom"
-        android:padding="20dp">
-        <TextView android:text="选择自动备份的相册"
+        >
+       <TextView android:layout_width="0dp"
+           android:layout_height="fill_parent"
+           android:layout_weight="1.0"/>
+       <LinearLayout android:orientation="horizontal"
+           android:layout_width="0dp"
+           android:layout_height="fill_parent"
+           android:layout_weight="3.0"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:background="@color/white">
+           <TextView android:text="    选择自动备份的相册"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"/>
-        <ImageView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/photo_classfy_select_backup"/>
+            android:gravity="center"
+            android:textColor="@color/blue"/>
+	        <ImageView android:layout_width="wrap_content"
+	            android:layout_height="20dp"
+	            android:layout_gravity="center"
+	            android:scaleType="centerInside"
+	            android:src="@drawable/photo_classfy_select_backup"/>
+       </LinearLayout>
+       <TextView android:layout_width="0dp"
+           android:layout_height="fill_parent"
+           android:layout_weight="1.0"/>
     </LinearLayout>
    
    <LinearLayout android:layout_alignParentBottom="true"
@@ -166,7 +185,8 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:gravity="center"
-               android:layout_gravity="center"/>
+               android:layout_gravity="center"
+               android:textColor="@color/blue"/>
        </LinearLayout>
        
        <LinearLayout android:layout_height="wrap_content"
@@ -183,7 +203,8 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:gravity="center"
-               android:layout_gravity="center"/>
+               android:layout_gravity="center"
+               android:textColor="@color/blue"/>
        </LinearLayout>
        
        <LinearLayout android:layout_height="wrap_content"
@@ -200,7 +221,8 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:gravity="center"
-               android:layout_gravity="center"/>
+               android:layout_gravity="center"
+               android:textColor="@color/blue"/>
        </LinearLayout>
        
        <LinearLayout android:layout_height="wrap_content"
@@ -217,7 +239,8 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:gravity="center"
-               android:layout_gravity="center"/>
+               android:layout_gravity="center"
+               android:textColor="@color/blue"/>
        </LinearLayout>
    </LinearLayout>
 

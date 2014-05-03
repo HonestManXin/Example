@@ -1,13 +1,16 @@
 package com.qihoo.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.webkit.WebChromeClient.CustomViewCallback;
 
-import com.qihoo.example.picture.StrongBoxFile;
 
 public final class StrongBoxUtil {
 	private static final String dbname="feiyangDB.db";
@@ -44,6 +47,12 @@ public final class StrongBoxUtil {
 		}
 	}
 	
+	public static void close() {
+		readDB.close();
+		writeDB.close();
+		sqlHelper.close();
+	}
+	
 	private static class StrongBoxSQLiteHelper extends SQLiteOpenHelper {
 
 		public StrongBoxSQLiteHelper(Context context, String name,
@@ -63,19 +72,39 @@ public final class StrongBoxUtil {
 		}
 	}
 	
-	public static boolean addPictureIntoStrongBox() {
+	public static boolean addPictureIntoStrongBox(String fullName, String nid, String pid) {
 		checkNull();
-		return true;
+		ContentValues values = new ContentValues();
+		values.put(KEY_FULLNAME, fullName);
+		values.put(KEY_NAME, FileUtil.getFileSimpleName(fullName));
+		values.put(KEY_NID, nid);
+		values.put(KEY_PID, pid);
+		long result = writeDB.insert(TABLE_NAME, KEY_ID, values);
+		return result != -1;
 	}
 	
-	public static boolean removePictureFromStrongBox() {
+	public static boolean removePictureFromStrongBox(String nid) {
 		checkNull();
+		writeDB.delete(TABLE_NAME, KEY_NID + "=?", new String[]{nid});
 		return true;
 	}
 	
 	public static List<StrongBoxFile> getAllStrongBoxPictures() {
 		checkNull();
-		return null;
+		Cursor cursor = readDB.query(TABLE_NAME, null, null, null, null, null, null);
+		int nameIndex = cursor.getColumnIndex(KEY_NAME);
+		int fullNameIndex = cursor.getColumnIndex(KEY_FULLNAME);
+		int nidIndex = cursor.getColumnIndex(KEY_NID);
+		int pidIndex = cursor.getColumnIndex(KEY_PID);
+		List<StrongBoxFile> list = new ArrayList<StrongBoxFile>();
+		for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+			String name = cursor.getString(nameIndex);
+			String fullName = cursor.getString(fullNameIndex);
+			String pid = cursor.getString(pidIndex);
+			String nid = cursor.getString(nidIndex);
+			list.add(new StrongBoxFile(name, fullName, nid, pid));
+		}
+		cursor.close();
+		return list;
 	}
-	
 }

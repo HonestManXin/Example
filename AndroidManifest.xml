@@ -36,6 +36,10 @@
         <activity 
             android:name=".picture.DirectoryPictureActivity"
             />
+        <activity 
+            android:name=".picture.StrongBoxPassWordActivity"/>
+        <activity 
+            android:name=".picture.PictureStrongBoxActivity"/>
         
         <activity 
             android:name=".QihooContactActivity"
