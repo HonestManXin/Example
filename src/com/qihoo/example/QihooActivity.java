@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import com.qihoo.example.picture.MainPicureActivity;
+import com.qihoo.example.picture.PictureClassifyActivity;
 import com.qihoo.yunpan.sdk.android.config.YunpanSDKConfig;
 import com.qihoo.yunpan.sdk.android.config.YunpanSDKConstants;
 import com.qihoo.yunpan.sdk.android.http.action.UserIntfLogin;
@@ -39,7 +39,7 @@ public class QihooActivity extends Activity implements IYunpanInterface{
 	private String passwd = "zsx2815";
 	
 	static {
-		id_activity.put(R.id.category_picture, MainPicureActivity.class);
+		id_activity.put(R.id.category_picture, PictureClassifyActivity.class);
 		id_activity.put(R.id.category_contact, QihooContactActivity.class);
 		id_activity.put(R.id.category_share, QihooShareActivity.class);
 	}

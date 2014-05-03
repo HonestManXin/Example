@@ -41,15 +41,14 @@
        android:layout_below="@+id/photo_classfy_top"
        android:layout_above="@+id/photo_classfy_select_backup"
        android:gravity="center"
-       android:paddingTop="20dp"
        android:layout_gravity="center_horizontal"
        android:layout_centerInParent="true">
        <TextView android:layout_width="fill_parent"
            android:layout_height="0dp"
-           android:layout_weight="1.0"/>
+           android:layout_weight="1.0"/> 
        <LinearLayout android:layout_width="fill_parent"
            android:layout_height="0dp"
-           android:layout_weight="4.0"
+           android:layout_weight="10.0"
            android:orientation="horizontal"
            android:gravity="center"
            android:paddingLeft="20dp"
@@ -60,14 +59,18 @@
 	           android:layout_weight="2.1"
 	           android:padding="10dp"
 	           >
-	           <ImageButton android:id="@+id/photo_classfy_cloud"
+
+	           <ImageView
+	               android:id="@+id/photo_classfy_cloud"
 	               android:layout_width="fill_parent"
-	               android:layout_gravity="center"
-	               android:scaleType="centerInside"
-		           android:layout_alignParentTop="true"
-		           android:src="@drawable/photo_classfy_cloud"
+	               android:layout_height="wrap_content"
 	               android:layout_above="@+id/photo_classfy_cloud_text"
-	               android:background="@android:color/transparent"/>
+	               android:layout_alignParentTop="true"
+	               android:layout_gravity="bottom"
+	               android:background="@android:color/transparent"
+	               android:scaleType="centerInside"
+	               android:src="@drawable/photo_classfy_cloud" />
+
 	           <TextView android:text="云盘备份相册"
 	               android:id="@+id/photo_classfy_cloud_text"
 	               android:layout_alignParentBottom="true"
@@ -88,13 +91,15 @@
 		               android:layout_height="0dp"
 		               android:layout_weight="1">
 		              <ImageView android:layout_width="fill_parent"
+		                  android:layout_height="wrap_content"
 		                  android:layout_alignParentTop="true"
-		                  android:layout_above="@+id/photo_classfy_local"
+		                  android:id="@+id/photo_classfy_local"
+		                  android:layout_above="@+id/photo_classfy_local_text"
 		                  android:src="@drawable/photo_classfy_local"
 		                  android:layout_gravity="center"
 		                  android:scaleType="centerInside"/>
 		              <TextView android:text="本地相册"
-		                  android:id="@+id/photo_classfy_local"
+		                  android:id="@+id/photo_classfy_local_text"
 		                  android:layout_alignParentBottom="true"
 		                  android:layout_width="wrap_content"
 		                  android:layout_height="wrap_content"
@@ -105,14 +110,15 @@
 	               android:layout_width="match_parent"
 	               android:layout_height="0dp"
 		           android:layout_weight="1">
-	              <ImageView android:layout_width="wrap_content"
+	              <ImageView android:id="@+id/photo_classfy_strongbox"
+	                  android:layout_width="wrap_content"
 	                  android:layout_height="wrap_content"
 	                  android:layout_gravity="center"
 	                  android:scaleType="centerInside"
 	                  android:src="@drawable/photo_classfy_strongbox"
-	                  android:layout_above="@+id/photo_classfy_strongbox"/>
+	                  android:layout_above="@+id/photo_classfy_strongbox_text"/>
 	              <TextView android:text="图片保险箱"
-	                  android:id="@+id/photo_classfy_strongbox"
+	                  android:id="@+id/photo_classfy_strongbox_text"
 	                  android:layout_width="wrap_content"
 	                  android:layout_height="wrap_content"
 	                  android:layout_gravity="center"

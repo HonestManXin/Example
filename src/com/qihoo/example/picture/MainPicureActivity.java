@@ -45,6 +45,7 @@ public class MainPicureActivity extends Activity {
 	private LoadDiskPictureThread thread = null;
 	private Handler handler = null;
 	private ThumbPictureAdapter adapter = null;
+	private View backward = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,12 @@ public class MainPicureActivity extends Activity {
 		refreshGridView = (PullToRefreshGridView) findViewById(R.id.pict_gallery);
 		gridView = refreshGridView.getRefreshableView();
 		adapter = new ThumbPictureAdapter(this, new MainPictureViewAdd());
+		backward = findViewById(R.id.photo_return);
+		backward.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				MainPicureActivity.this.finish();
+			}
+		});
 		//loadAllPictures();
 		gridView.setAdapter(adapter);
 		refreshGridView.setOnRefreshListener(new OnRefreshListener() {

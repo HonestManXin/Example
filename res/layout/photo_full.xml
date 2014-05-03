@@ -5,17 +5,18 @@
     android:orientation="vertical"
     android:background="@color/white">
         
-        <LinearLayout android:layout_width="fill_parent"
+       <!--  <LinearLayout android:layout_width="fill_parent"
 		        android:layout_height="fill_parent"
 		        android:gravity="center"
 		       >
-            <android.support.v4.view.ViewPager android:id="@+id/photo_full_imageView"
+            
+        </LinearLayout> -->
+        <android.support.v4.view.ViewPager android:id="@+id/photo_full_imageView"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_gravity="center"
 	        	android:scaleType="centerInside"
         	 />
-        </LinearLayout>
         
     
     <LinearLayout 
@@ -24,7 +25,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_gravity="top"
-        android:background="@drawable/photo_bottom">
+        android:background="@drawable/photo_top">
         <RelativeLayout android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             >
