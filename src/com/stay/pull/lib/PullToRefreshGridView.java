@@ -6,7 +6,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View;
 import android.widget.GridView;
 
-import com.qihoo.example.R;
+import com.qihoo.feiyang.R;
 import com.stay.pull.lib.internal.EmptyViewMethodAccessor;
 
 public class PullToRefreshGridView extends PullToRefreshAdapterViewBase<GridView> {

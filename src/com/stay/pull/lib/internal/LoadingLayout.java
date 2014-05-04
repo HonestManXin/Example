@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.qihoo.example.R;
+import com.qihoo.feiyang.R;
 import com.stay.pull.lib.PullToRefreshBase;
 
 public class LoadingLayout extends FrameLayout {

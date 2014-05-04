@@ -1,6 +1,6 @@
 package com.stay.pull.lib;
 
-import com.qihoo.example.R;
+import com.qihoo.feiyang.R;
 
 import android.content.Context;
 import android.util.AttributeSet;

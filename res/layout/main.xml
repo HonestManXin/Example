@@ -13,7 +13,7 @@
         	        android:layout_width="fill_parent"
         	        android:layout_height="wrap_content"
         	        android:orientation="horizontal">
-        	        <com.qihoo.example.RoundedImageView android:id="@+id/avatar" 
+        	        <com.qihoo.feiyang.RoundedImageView android:id="@+id/avatar" 
         	            android:scaleType="center"
         	            android:src="@drawable/default_user"
         	            android:layout_width="80dp"

@@ -9,7 +9,7 @@ import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-import com.qihoo.example.R;
+import com.qihoo.feiyang.R;
 
 public class PullToRefreshScrollView extends PullToRefreshBase<ScrollView> {
 
